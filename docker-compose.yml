@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  unaa_password_app:
+    container_name: password_app
+    restart: always
+    build:
+      context: .
+      dockerfile: dockerfiles/Dockerfile
+    command: run
+    volumes:
+      - ./media:/app/media
+      - ./static:/app/static
+    env_file: .env
+    ports:
+      - 127.0.0.1:8000:8000
+volumes:
+  unaa-data:
