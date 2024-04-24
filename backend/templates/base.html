@@ -19,10 +19,14 @@
         width="30">
       </a>
     </div>
+    <a href="{% url 'index' %}" class="btn btn-default navbar-btn btn-primary">ГЛАВНАЯ</a>
       <a href="{% url 'addnew' %}" class="btn btn-default navbar-btn btn-primary">Добавить</a>
-    <div class="navbar-right p-2">
-      <a href="{% url 'sign_in' %}" class="btn btn-default navbar-btn btn-primary">ВЫХОД</a>
-    </div>
+
+<div class="navbar-right p-2">
+  <span class="btn btn-default navbar-btn btn-primary">{{ user.first_name }} {{ user.last_name }}</span>
+    <a href="{% url 'sign_in' %}" class="btn btn-default navbar-btn btn-primary">ВЫХОД</a>
+</div>
+
   </div>
 </nav>
 <div class="container">

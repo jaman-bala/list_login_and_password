@@ -3,12 +3,6 @@ migrate:
 	@echo "Migrating database..."
 	python manage.py migrate --noinput
 
-.PHONY: run
-run: migrate collectstatic clean
-	@echo "Running server..."
-	gunicorn -w 4 --bind 0.0.0.0:8000 backend.config.wsgi --reload
-
-
 .PHONY: collectstatic
 collectstatic:
 	@echo "Copying collectstatic files..."
@@ -17,27 +11,18 @@ collectstatic:
 .PHONY: clean
 clean:
 	@echo -n "Clear temp files..."
-	@rm -rf `find . -name __pycache__`
-	@rm -rf `find . -type f -name '*.py[co]' `
-	@rm -rf `find . -type f -name '*~' `
-	@rm -rf `find . -type f -name '.*~' `
-	@rm -rf `find . -type f -name '@*' `
-	@rm -rf `find . -type f -name '#*#' `
-	@rm -rf `find . -type f -name '*.orig' `
-	@rm -rf `find . -type f -name '*.rej' `
-	@rm -rf .coverage
-	@rm -rf coverage.html
-	@rm -rf coverage.xml
-	@rm -rf htmlcov
-	@rm -rf build
-	@rm -rf cover
-	@rm -rf .install-deps
-	@rm -rf *.egg-info
-	@rm -rf .pytest_cache
-	@rm -rf dist
+	find . -name '__pycache__' -exec rm -rf {} +
+	find . -type f -name '*.py[co]' -exec rm -f {} +
+	find . -type f \( -name '*~' -o -name '.*~' -o -name '@*' -o -name '#*#' -o -name '*.orig' -o -name '*.rej' \) -exec rm -f {} +
+	rm -rf .coverage coverage.html coverage.xml htmlcov build cover .install-deps *.egg-info .pytest_cache dist
+
+.PHONY: run
+run: migrate collectstatic clean
+	@echo "Running server..."
+	uvicorn backend.config.asgi:application --workers  4 --host  0.0.0.0 --port  8000 --reload
 
 .PHONY: help
 help:
 	@echo -n "Common make targets"
 	@echo ":"
-	@cat Makefile | sed -n '/^\.PHONY: / h; /\(^\t@*echo\|^\t:\)/ {H; x; /PHONY/ s/.PHONY: \(.*\)\n.*"\(.*\)"/  make \1\t\2/p; d; x}'| sort -k2,2 |expand -t 20
+	@cat Makefile | sed -n '/^\.PHONY: / h; /\(^\t@*echo\|^\t:\)/ {H; x; /PHONY/ s/.PHONY: \(.*\)\n.*"\(.*\)"/  make \1\t\2/p; d; x}'| sort -k2,2 |expand -t  20

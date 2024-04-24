@@ -1,3 +1,13 @@
 from django.contrib import admin
 
-# Register your models here.
+from backend.apps.db_password.models import Employee
+
+
+@admin.register(Employee)
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display = (
+        'title',
+    )
+    search_fields = (
+        'title',
+    )

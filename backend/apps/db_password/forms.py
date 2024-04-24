@@ -5,25 +5,20 @@ from .models import Employee
 class EmployeeForm(forms.ModelForm):
     class Meta:
         model = Employee
-        fields = ['name', 'contact', 'email', 'title', 'login', 'password', 'descriptions']
+        fields = ['title', 'url', 'ip_address', 'login', 'password', 'descriptions']
 
         widgets = {
-            'name': forms.TextInput(
-                attrs={
-                    'class': 'form-control'
-                }
-            ),
-            'email': forms.EmailInput(
-                attrs={
-                    'class': 'form-control'
-                }
-            ),
-            'contact': forms.TextInput(
-                attrs={
-                    'class': 'form-control'
-                }
-            ),
             'title': forms.TextInput(
+                attrs={
+                    'class': 'form-control'
+                }
+            ),
+            'url': forms.TextInput(
+                attrs={
+                    'class': 'form-control'
+                }
+            ),
+            'ip_address': forms.TextInput(
                 attrs={
                     'class': 'form-control'
                 }
@@ -38,9 +33,9 @@ class EmployeeForm(forms.ModelForm):
                     'class': 'form-control'
                 }
             ),
-            'descriptions': forms.TextInput(
+            'descriptions': forms.Textarea(
                 attrs={
-                    'class': 'form-control'
+                    'class': 'form-control', 'rows': 4
                 }
             ),
                     }

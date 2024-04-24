@@ -20,54 +20,56 @@
    <input type="text" class="form-control" name="id" id="id_id" required maxlength="255" value="{{ employee.id }}"/>
   </div>  
    </div>  
-   <div class="form-group row">  
-  <label class="col-sm-2 col-form-label">Имя сотрудника:</label>
-  <div class="col-sm-4">  
-   <input type="text" class="form-control" name="name" id="id_name" required maxlength="100" value="{{ employee.name }}" />  
-  </div>  
-   </div>  
-  <div class="form-group row">  
-  <label class="col-sm-2 col-form-label">Почта сотрудника:</label>
-  <div class="col-sm-4">  
-   <input type="email" class="form-control" name="email" id="id_email" required maxlength="254" value="{{ employee.email }}" />  
-  </div>  
-   </div>  
-  <div class="form-group row">  
-  <label class="col-sm-2 col-form-label">Контакты сотрудника</label>
-  <div class="col-sm-4">  
-   <input type="text" class="form-control" name="contact" id="id_contact" required maxlength="15" value="{{ employee.contact }}" />  
-  </div>  
-   </div>
+
    <div class="form-group row">
   <label class="col-sm-2 col-form-label">Название проекта:</label>
   <div class="col-sm-4">
    <input type="text" class="form-control" name="title" id="id_title" required maxlength="15" value="{{ employee.title }}" />
   </div>
    </div>
+
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">URL проекта:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="url" id="id_url" required maxlength="15" value="{{ employee.url }}" />
+  </div>
+   </div>
+
+   <div class="form-group row">
+  <label class="col-sm-2 col-form-label">IP адрес:</label>
+  <div class="col-sm-4">
+   <input type="text" class="form-control" name="ip_address" id="id_ip_address" required maxlength="15" value="{{ employee.ip_address }}" />
+  </div>
+   </div>
+
    <div class="form-group row">
   <label class="col-sm-2 col-form-label">Логин:</label>
   <div class="col-sm-4">
    <input type="text" class="form-control" name="login" id="id_login" required maxlength="255" value="{{ employee.login }}" />
   </div>
    </div>
+
    <div class="form-group row">
   <label class="col-sm-2 col-form-label">Пароль:</label>
   <div class="col-sm-4">
    <input type="text" class="form-control" name="password" id="id_password" required maxlength="255" value="{{ employee.password }}" />
   </div>
    </div>
+
    <div class="form-group row">
   <label class="col-sm-2 col-form-label">Примичание:</label>
   <div class="col-sm-4">
-   <input type="text" class="form-control" name="descriptions" id="id_descriptions" required maxlength="255" value="{{ employee.descriptions }}" />
+   <textarea class="form-control" name="descriptions" id="id_descriptions" required maxlength="255" rows="3">{{ employee.descriptions }}</textarea>
   </div>
    </div>
+
   <div class="form-group row">  
   <label class="col-sm-1 col-form-label"></label>  
   <div class="col-sm-4">  
   <button type="submit" class="btn btn-success btn-lg">Изменить</button>
   </div>  
-   </div>  
+   </div>
+
   </div>  
  </form>  
 {% endblock content %}
