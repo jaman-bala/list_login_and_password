@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
-from .forms import EmployeeForm
-from .models import Employee
+from backend.apps.db_password.forms import EmployeeForm
+from backend.apps.db_password.models import Employee
 
 
 @login_required

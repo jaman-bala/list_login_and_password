@@ -1,5 +1,6 @@
 from django import forms
-from .models import Employee
+
+from backend.apps.db_password.models import Employee
 
 
 class EmployeeForm(forms.ModelForm):
@@ -38,4 +39,4 @@ class EmployeeForm(forms.ModelForm):
                     'class': 'form-control', 'rows': 4
                 }
             ),
-                    }
+        }

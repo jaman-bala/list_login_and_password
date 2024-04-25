@@ -3,8 +3,8 @@ from django import forms
 
 class LoginForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(
-        attrs={"class": "login", "placeholder": "Логин",}
+        attrs={"class": "login", "placeholder": "Логин", }
     ))
     password = forms.CharField(widget=forms.PasswordInput(
-        attrs={"class": "parol", "placeholder": "Пароль",},
+        attrs={"class": "parol", "placeholder": "Пароль", },
     ))

@@ -1,72 +1,72 @@
 {% extends "base.html" %}
- 
+
 {% block title %}Добавления логина и пароля{% endblock title %}
- 
+
 {% block content %}
 <div class="col-md-12">
-    <h4>Добавления логина и пароля</h4>
-         
- <form method="POST" class="post-form" action="{% url 'addnew' %}">
-   {% csrf_token %}  
-  <div class="container">  
- <br>  
-  <div class="form-group row">  
-  <label class="col-sm-1 col-form-label"></label>  
-  <div class="col-sm-4">  
-  <h3>Заполните поля</h3>
-  </div>  
-   </div>  
+    <h4>Добавления логина и паролей</h4>
 
- <div class="form-group row">
-  <label class="col-sm-2 col-form-label">Название проекта:</label>
-  <div class="col-sm-4">
-    {{ form.title }}
-  </div>
+    <form method="POST" class="post-form" action="{% url 'addnew' %}">
+        {% csrf_token %}
+        <div class="container">
+            <br>
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <h3>Заполните поля</h3>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Название проекта:</label>
+                <div class="col-sm-4">
+                    {{ form.title }}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">URL проекта:</label>
+                <div class="col-sm-4">
+                    {{ form.url }}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">IP адрес:</label>
+                <div class="col-sm-4">
+                    {{ form.ip_address }}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Логин:</label>
+                <div class="col-sm-4">
+                    {{ form.login }}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Пароль:</label>
+                <div class="col-sm-4">
+                    {{ form.password }}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Примечание:</label>
+                <div class="col-sm-4">
+                    {{ form.descriptions }}
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-1 col-form-label"></label>
+                <div class="col-sm-4">
+                    <button type="submit" class="btn btn-primary">Создать</button>
+                </div>
+            </div>
+
+        </div>
+    </form>
 </div>
-
-<div class="form-group row">
-  <label class="col-sm-2 col-form-label">URL проекта:</label>
-  <div class="col-sm-4">
-    {{ form.url }}
-  </div>
-</div>
-
-<div class="form-group row">
-  <label class="col-sm-2 col-form-label">IP адрес:</label>
-  <div class="col-sm-4">
-    {{ form.ip_address }}
-  </div>
-</div>
-
-<div class="form-group row">
-  <label class="col-sm-2 col-form-label">Логин:</label>
-  <div class="col-sm-4">
-    {{ form.login }}
-  </div>
-</div>
-
-<div class="form-group row">
-  <label class="col-sm-2 col-form-label">Пароль:</label>
-  <div class="col-sm-4">
-    {{ form.password }}
-  </div>
-</div>
-
-<div class="form-group row">
-  <label class="col-sm-2 col-form-label">Примечание:</label>
-  <div class="col-sm-4">
-    {{ form.descriptions }}
-  </div>
-</div>
-
-  <div class="form-group row">  
-  <label class="col-sm-1 col-form-label"></label>  
-  <div class="col-sm-4">  
-  <button type="submit" class="btn btn-primary">Создать</button>
-  </div>  
-   </div>
-
-  </div>  
- </form>  
-</div> 
 {% endblock content %} 

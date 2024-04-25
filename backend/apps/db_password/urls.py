@@ -1,6 +1,6 @@
-from .views import addnew, edit, update, destroy, index
 from django.urls import path
 
+from backend.apps.db_password.views import addnew, edit, update, destroy, index
 
 urlpatterns = [
     path('', index, name='index'),

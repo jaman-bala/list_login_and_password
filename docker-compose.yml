@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
- app:
+  app:
     container_name: backend
     restart: always
     build:
@@ -19,7 +19,7 @@ services:
     depends_on:
       - db
 
- db:
+  db:
     container_name: db
     restart: always
     image: postgres:12.4-alpine
@@ -30,5 +30,5 @@ services:
       - 5432
 
 volumes:
- postgres-data:
- static:
+  postgres-data:
+  static:

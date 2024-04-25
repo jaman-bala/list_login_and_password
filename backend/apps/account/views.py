@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
-from .forms import LoginForm
+
+from backend.apps.account.forms import LoginForm
 
 
 def sign_in(request):
@@ -29,4 +29,4 @@ def sign_in(request):
 
 
 def error(request):
-    return render (request, 'error404.html')
+    return render(request, 'error404.html')
