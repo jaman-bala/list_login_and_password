@@ -36,7 +36,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'backend.config.urls'
-
+SESSION_COOKIE_AGE = 1800
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
