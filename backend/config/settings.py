@@ -10,7 +10,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
-
+CSRF_TRUSTED_ORIGINS = ['https://password.tsvs.kg']
 # Application definition
 
 INSTALLED_APPS = [
