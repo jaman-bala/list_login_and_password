@@ -6,3 +6,9 @@ $(document).ready(function() {
     );
 } );
 console.log("main.js загружен");
+
+$(document).ready(function() {
+    if (!$.fn.DataTable.isDataTable('#bootstrapdatatable')) {
+        $('#bootstrapdatatable').DataTable();
+    }
+});
