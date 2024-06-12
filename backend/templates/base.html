@@ -31,15 +31,8 @@
 </div>
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="{% static 'src/js/main.js' %}" defer></script>
 <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-<script>
-    $(document).ready(function() {
-        if (!$.fn.DataTable.isDataTable('#bootstrapdatatable')) {
-            $('#bootstrapdatatable').DataTable();
-        }
-    });
-</script>
+<script src="{% static 'src/js/main.js' %}" defer></script>
 </body>
 </html>
